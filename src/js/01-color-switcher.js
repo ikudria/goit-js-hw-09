@@ -4,10 +4,12 @@ const changeBgColor = {
 
   start() {
     if (this.isActive) {
+      
       return;
     }
 
     this.isActive = true;
+    document.querySelector('button[data-start]').style.opacity = 0.5;
 
     this.intervalId = setInterval(() => {
       document.querySelector('body').style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -18,6 +20,7 @@ const changeBgColor = {
   stop() {
     clearInterval(this.intervalId);
     this.isActive = false;
+    document.querySelector('button[data-start]').style.opacity = 1;
   },
 };
 
