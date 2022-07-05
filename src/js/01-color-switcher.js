@@ -14,11 +14,11 @@ const changeBgColor = {
     this.isActive = true;
 
     this.intervalId = setInterval(() => {
-      const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-      body.style.backgroundColor = color;
+      body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+       ;
     }, 1000);
   },
-  
+
   stop() {
     clearInterval(this.intervalId);
     this.isActive = false;
