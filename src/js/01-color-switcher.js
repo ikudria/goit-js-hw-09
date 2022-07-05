@@ -1,7 +1,3 @@
-const startBtn = document.querySelector('button[data-start]');
-const stopBtn = document.querySelector('button[data-stop]');
-const body = document.querySelector('body');
-
 const changeBgColor = {
   intervalId: null,
   isActive: false,
@@ -14,7 +10,7 @@ const changeBgColor = {
     this.isActive = true;
 
     this.intervalId = setInterval(() => {
-      body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+      document.querySelector('body').style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
        ;
     }, 1000);
   },
@@ -25,10 +21,10 @@ const changeBgColor = {
   },
 };
 
-startBtn.addEventListener('click', () => {
+document.querySelector('button[data-start]').addEventListener('click', () => {
   changeBgColor.start();
 });
 
-stopBtn.addEventListener('click', () => {
+document.querySelector('button[data-stop]').addEventListener('click', () => {
   changeBgColor.stop();
 });
