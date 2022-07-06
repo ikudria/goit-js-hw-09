@@ -35,7 +35,7 @@ const options = {
               return;
             }
 
-            const time = this.getTime(diff);
+            const time = this.convertMs(diff);
             this.setMarkup(time);
           }, 1000);
         },
@@ -44,11 +44,16 @@ const options = {
           clearInterval(this.intervalId);
         },
 
-        getTime(diff) {
-          const days = Math.floor(diff / 1000 / 60 / 60 / 24);
-          const hours = Math.floor((diff / 1000 / 60 / 60) % 24);
-          const minutes = Math.floor((diff / 1000 / 60) % 60);
-          const seconds = Math.floor((diff / 1000) % 60);
+        convertMs(diff) {
+          const second = 1000;
+          const minute = second * 60;
+          const hour = minute * 60;
+          const day = hour * 24;
+
+          const days = Math.floor(diff / day);
+          const hours = Math.floor((diff % day) / hour);
+          const minutes = Math.floor(((diff % day) % hour) / minute);
+          const seconds = Math.floor((((diff % day) % hour) % minute) / second);
 
           const time = {
             days,
