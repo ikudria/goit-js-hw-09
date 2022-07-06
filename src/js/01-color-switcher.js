@@ -3,8 +3,8 @@ const changeBgColor = {
   isActive: false,
 
   start() {
+    
     if (this.isActive) {
-      
       return;
     }
 
