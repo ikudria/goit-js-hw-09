@@ -28,7 +28,7 @@ const options = {
 
           this.intervalId = setInterval(() => {
             let startTime = Date.now();
-            // console.log(startTime);
+
             let diff = endTime - startTime;
 
             if (diff < 0) {
