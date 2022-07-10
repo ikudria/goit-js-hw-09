@@ -27,7 +27,7 @@ const options = {
           startBtn.disabled = true;
 
           this.intervalId = setInterval(() => {
-            const startTime = Date.now();
+            let startTime = Date.now();
             // console.log(startTime);
             let diff = endTime - startTime;
 
